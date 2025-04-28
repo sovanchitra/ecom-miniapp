@@ -1,4 +1,4 @@
-import HomePage from "../pages/HomePage";
-import ProductPage from "../pages/ProductPage";
+import MenuDetailPage from "../pages/menu/MenuDetailPage";
+import ProductPage from "../pages/menu/MenuPage";
 
-export { HomePage, ProductPage };
+export { ProductPage, MenuDetailPage };

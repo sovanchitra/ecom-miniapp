@@ -1,21 +1,41 @@
-import { HomePage, ProductPage } from "../routes/index";
+import RootLayout from "../components/layout/RootLayout";
+import WidthConstraintLayout from "../components/layout/WidthConstraintLayout";
+import { ProductPage, MenuDetailPage } from "../routes/index";
 
 const routesConfig = [
   {
     path: "/",
-    element: <HomePage />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <WidthConstraintLayout />,
+        children: [
+          {
+            path: "/",
+            element: <ProductPage />,
+          },
+          {
+            path: "/cart",
+            element: <div>Cart</div>,
+          },
+          {
+            path: "/checkout",
+            element: <div>Checkout</div>,
+          },
+        ],
+      },
+    ],
   },
   {
-    path: "/products",
-    element: <ProductPage />,
-  },
-  {
-    path: "/cart",
-    element: <div>Cart</div>,
-  },
-  {
-    path: "/checkout",
-    element: <div>Checkout</div>,
+    path: "/",
+    element: <WidthConstraintLayout />,
+    children: [
+      {
+        path: "menu/:id",
+        element: <MenuDetailPage />,
+      },
+    ],
   },
 ];
 
